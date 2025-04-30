@@ -1,0 +1,24 @@
+-- Premier League
+INSERT INTO clubs (id, name, acronym, stadium_name, championship_id)
+VALUES
+(uuid_generate_v4(), 'Manchester City', 'MCFC', 'Etihad Stadium', (SELECT id FROM championships WHERE name = 'Premier League'));
+
+-- La Liga
+INSERT INTO clubs (id, name, acronym, stadium_name, championship_id)
+VALUES
+(uuid_generate_v4(), 'Real Madrid', 'RMA', 'Santiago Bernabéu', (SELECT id FROM championships WHERE name = 'La Liga'));
+
+-- Bundesliga
+INSERT INTO clubs (id, name, acronym, stadium_name, championship_id)
+VALUES
+(uuid_generate_v4(), 'Bayern Munich', 'FCB', 'Allianz Arena', (SELECT id FROM championships WHERE name = 'Bundesliga'));
+
+-- Serie A
+INSERT INTO clubs (id, name, acronym, stadium_name, championship_id)
+VALUES
+(uuid_generate_v4(), 'Juventus', 'JUV', 'Allianz Stadium', (SELECT id FROM championships WHERE name = 'Seria A'));
+
+-- Ligue 1
+INSERT INTO clubs (id, name, acronym, stadium_name, championship_id)
+VALUES
+(uuid_generate_v4(), 'Paris Saint-Germain', 'PSG', 'Parc des Princes', (SELECT id FROM championships WHERE name = 'Ligue 1'));

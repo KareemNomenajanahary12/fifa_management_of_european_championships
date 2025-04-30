@@ -1,0 +1,39 @@
+INSERT INTO coaches (id, name, nationality, club_id)
+VALUES (
+    uuid_generate_v4(),
+    'Pep Guardiola',
+    'Espagnole',
+    (SELECT id FROM clubs WHERE name = 'Manchester City')
+);
+
+INSERT INTO coaches (id, name, nationality, club_id)
+VALUES (
+    uuid_generate_v4(),
+    'Carlo Ancelotti',
+    'Italienne',
+    (SELECT id FROM clubs WHERE name = 'Real Madrid')
+);
+
+INSERT INTO coaches (id, name, nationality, club_id)
+VALUES (
+    uuid_generate_v4(),
+    'Thomas Tuchel',
+    'Allemande',
+    (SELECT id FROM clubs WHERE name = 'Bayern Munich')
+);
+
+INSERT INTO coaches (id, name, nationality, club_id)
+VALUES (
+    uuid_generate_v4(),
+    'Massimiliano Allegri',
+    'Italienne',
+    (SELECT id FROM clubs WHERE name = 'Juventus')
+);
+
+INSERT INTO coaches (id, name, nationality, club_id)
+VALUES (
+    uuid_generate_v4(),
+    'Luis Enrique',
+    'Espagnole',
+    (SELECT id FROM clubs WHERE name = 'Paris Saint-Germain')
+);

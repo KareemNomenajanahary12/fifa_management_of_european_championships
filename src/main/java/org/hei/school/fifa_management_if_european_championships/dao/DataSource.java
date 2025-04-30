@@ -1,4 +1,4 @@
-package org.hei.school.fifa_management_if_european_championships.dao.data;
+package org.hei.school.fifa_management_if_european_championships.dao;
 
 import org.springframework.context.annotation.Configuration;
 
