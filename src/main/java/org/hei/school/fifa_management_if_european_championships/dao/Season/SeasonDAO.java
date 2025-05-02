@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface SeasonDAO {
     List<Season> getAll();
-    List<Season> saveAll();
+    List<Season> saveAll(List<Season> seasonsToCreate);
     Season updateStatus(int year);
 }
