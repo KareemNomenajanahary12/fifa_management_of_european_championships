@@ -22,8 +22,10 @@ public class DataSource {
 
     public Connection getConnection() {
         try {
+            System.out.println("✅ Connection with database successfully");
             return DriverManager.getConnection(jdbcUrl, user, password);
         } catch (SQLException e) {
+            System.out.println("❌ Failed to connect with database");
             throw new ServerException(e);
         }
     }
