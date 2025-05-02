@@ -24,7 +24,7 @@ public class SeasonRestController {
         return service.getAllSeasons();
     }
     @PostMapping
-    public List<Season> createSeasons(@RequestBody List<SeasonToCreate> seasonsToCreate) {
+    public List<Season> createSeasons(@RequestBody(required = true) List<SeasonToCreate> seasonsToCreate) {
         return service.createSeasons(seasonsToCreate);
     }
 
