@@ -69,7 +69,46 @@ public class SeasonDAOImplementation implements SeasonDAO{
     }
 
     @Override
-    public Season updateStatus(int year) {
-        return null;
+    public Season updateStatus(int year, SeasonStatus newStatus) {
+        String sql = "UPDATE season SET season_status = ?::season_status WHERE year = ?";
+
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, newStatus.name());
+            statement.setInt(2, year);
+            int rowsAffected = statement.executeUpdate();
+
+            if (rowsAffected == 0) {
+                throw new IllegalArgumentException("No season found to update for year: " + year);
+            }
+            return findByYear(year);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public Season findByYear(int year) {
+        String sql = "SELECT id, year, alias, season_status FROM season WHERE year = ?";
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, year);
+            ResultSet rs = statement.executeQuery();
+
+            if (rs.next()) {
+                Season season = new Season();
+                season.setId(UUID.fromString(rs.getString("id")));
+                season.setYear(rs.getInt("year"));
+                season.setAlias(rs.getString("alias"));
+                season.setSeasonStatus(SeasonStatus.valueOf(rs.getString("season_status")));
+                System.out.println(season);
+                return season;
+            } else {
+                throw new IllegalArgumentException("No season found for year: " + year);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
