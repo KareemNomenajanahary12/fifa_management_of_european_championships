@@ -36,4 +36,16 @@ public class SeasonService {
 
         return implementation.saveAll(seasons);
     }
+
+    public Season updateSeasonStatus(int year, SeasonStatus newStatus) {
+        Season currentSeason = implementation.findByYear(year);
+        SeasonStatus currentStatus = currentSeason.getSeasonStatus();
+        boolean valid = (currentStatus == SeasonStatus.NOT_STARTED && newStatus == SeasonStatus.STARTED) || (currentStatus == SeasonStatus.STARTED && newStatus == SeasonStatus.FINISHED);
+
+        if (!valid) {
+            throw new IllegalArgumentException("Invalid transition from " + currentStatus + " to " + newStatus);
+        }
+
+        return implementation.updateStatus(year, newStatus);
+    }
 }
