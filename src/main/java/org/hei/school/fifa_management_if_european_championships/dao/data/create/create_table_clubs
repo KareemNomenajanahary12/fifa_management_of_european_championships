@@ -5,3 +5,6 @@ CREATE TABLE clubs (
     stadium_name VARCHAR(100),
     championship_id UUID NOT NULL REFERENCES championships(id) ON DELETE CASCADE
 );
+
+alter table clubs drop column championship_id;
+alter table clubs add column yearCreation int;
