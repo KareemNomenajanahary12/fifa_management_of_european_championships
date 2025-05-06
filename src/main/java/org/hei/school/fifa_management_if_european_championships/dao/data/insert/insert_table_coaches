@@ -1,39 +1,11 @@
-INSERT INTO coaches (id, name, nationality, club_id)
-VALUES (
-    uuid_generate_v4(),
-    'Pep Guardiola',
-    'Espagnole',
-    (SELECT id FROM clubs WHERE name = 'Manchester City')
-);
-
-INSERT INTO coaches (id, name, nationality, club_id)
-VALUES (
-    uuid_generate_v4(),
-    'Carlo Ancelotti',
-    'Italienne',
-    (SELECT id FROM clubs WHERE name = 'Real Madrid')
-);
-
-INSERT INTO coaches (id, name, nationality, club_id)
-VALUES (
-    uuid_generate_v4(),
-    'Thomas Tuchel',
-    'Allemande',
-    (SELECT id FROM clubs WHERE name = 'Bayern Munich')
-);
-
-INSERT INTO coaches (id, name, nationality, club_id)
-VALUES (
-    uuid_generate_v4(),
-    'Massimiliano Allegri',
-    'Italienne',
-    (SELECT id FROM clubs WHERE name = 'Juventus')
-);
-
-INSERT INTO coaches (id, name, nationality, club_id)
-VALUES (
-    uuid_generate_v4(),
-    'Luis Enrique',
-    'Espagnole',
-    (SELECT id FROM clubs WHERE name = 'Paris Saint-Germain')
-);
+INSERT INTO coaches (id, name, nationality, club_id) VALUES
+(UUID_GENERATE_V4(), 'Pep Guardiola', 'Spanish', (SELECT id FROM clubs WHERE name = 'Manchester City')),
+(UUID_GENERATE_V4(), 'Carlo Ancelotti', 'Italian', (SELECT id FROM clubs WHERE name = 'Real Madrid')),
+(UUID_GENERATE_V4(), 'Julian Nagelsmann', 'German', (SELECT id FROM clubs WHERE name = 'Bayern Munich')),
+(UUID_GENERATE_V4(), 'Massimiliano Allegri', 'Italian', (SELECT id FROM clubs WHERE name = 'Juventus')),
+(UUID_GENERATE_V4(), 'Christophe Galtier', 'French', (SELECT id FROM clubs WHERE name = 'Paris Saint-Germain')),
+(UUID_GENERATE_V4(), 'Xavi Hernandez', 'Spanish', (SELECT id FROM clubs WHERE name = 'Barcelona')),
+(UUID_GENERATE_V4(), 'Jurgen Klopp', 'German', (SELECT id FROM clubs WHERE name = 'Liverpool')),
+(UUID_GENERATE_V4(), 'Mikel Arteta', 'Spanish', (SELECT id FROM clubs WHERE name = 'Arsenal')),
+(UUID_GENERATE_V4(), 'Graham Potter', 'English', (SELECT id FROM clubs WHERE name = 'Chelsea')),
+(UUID_GENERATE_V4(), 'Erik ten Hag', 'Dutch', (SELECT id FROM clubs WHERE name = 'Manchester United'));

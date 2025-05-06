@@ -2,6 +2,8 @@ CREATE TABLE clubs (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     name VARCHAR(100) NOT NULL UNIQUE,
     acronym VARCHAR(10),
+    year_creation INT,
     stadium_name VARCHAR(100),
-    championship_id UUID NOT NULL REFERENCES championships(id) ON DELETE CASCADE
+    coach_id UUID NOT NULL,    -- Référence obligatoire à un coach
+    FOREIGN KEY (coach_id) REFERENCES coaches(id) ON DELETE CASCADE  -- Référence à la table coaches
 );

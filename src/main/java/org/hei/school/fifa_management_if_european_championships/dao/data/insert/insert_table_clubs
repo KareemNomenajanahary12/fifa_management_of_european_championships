@@ -1,24 +1,11 @@
--- Premier League
-INSERT INTO clubs (id, name, acronym, stadium_name, championship_id)
-VALUES
-(uuid_generate_v4(), 'Manchester City', 'MCFC', 'Etihad Stadium', (SELECT id FROM championships WHERE name = 'Premier League'));
-
--- La Liga
-INSERT INTO clubs (id, name, acronym, stadium_name, championship_id)
-VALUES
-(uuid_generate_v4(), 'Real Madrid', 'RMA', 'Santiago Bernabéu', (SELECT id FROM championships WHERE name = 'La Liga'));
-
--- Bundesliga
-INSERT INTO clubs (id, name, acronym, stadium_name, championship_id)
-VALUES
-(uuid_generate_v4(), 'Bayern Munich', 'FCB', 'Allianz Arena', (SELECT id FROM championships WHERE name = 'Bundesliga'));
-
--- Serie A
-INSERT INTO clubs (id, name, acronym, stadium_name, championship_id)
-VALUES
-(uuid_generate_v4(), 'Juventus', 'JUV', 'Allianz Stadium', (SELECT id FROM championships WHERE name = 'Seria A'));
-
--- Ligue 1
-INSERT INTO clubs (id, name, acronym, stadium_name, championship_id)
-VALUES
-(uuid_generate_v4(), 'Paris Saint-Germain', 'PSG', 'Parc des Princes', (SELECT id FROM championships WHERE name = 'Ligue 1'));
+INSERT INTO clubs (id, name, acronym, year_creation, stadium_name) VALUES
+(UUID_GENERATE_V4(), 'Manchester City', 'MCFC', 1880, 'Etihad Stadium'),
+(UUID_GENERATE_V4(), 'Real Madrid', 'RM', 1902, 'Santiago Bernabéu Stadium'),
+(UUID_GENERATE_V4(), 'Bayern Munich', 'FCB', 1900, 'Allianz Arena'),
+(UUID_GENERATE_V4(), 'Juventus', 'JUV', 1897, 'Allianz Stadium'),
+(UUID_GENERATE_V4(), 'Paris Saint-Germain', 'PSG', 1970, 'Parc des Princes'),
+(UUID_GENERATE_V4(), 'Barcelona', 'FCB', 1899, 'Camp Nou'),
+(UUID_GENERATE_V4(), 'Liverpool', 'LFC', 1892, 'Anfield'),
+(UUID_GENERATE_V4(), 'Arsenal', 'AFC', 1886, 'Emirates Stadium'),
+(UUID_GENERATE_V4(), 'Chelsea', 'CFC', 1905, 'Stamford Bridge'),
+(UUID_GENERATE_V4(), 'Manchester United', 'MUFC', 1878, 'Old Trafford');

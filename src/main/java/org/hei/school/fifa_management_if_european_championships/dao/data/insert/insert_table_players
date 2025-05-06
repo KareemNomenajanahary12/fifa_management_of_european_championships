@@ -1,44 +1,12 @@
--- Joueurs de Manchester City
-INSERT INTO players (id, name, number, position, nationality, age, club_id)
-VALUES
-(uuid_generate_v4(), 'Erling Haaland', 9, 'STRIKER', 'Norwegian', 24, (SELECT id FROM clubs WHERE name = 'Manchester City')),
-(uuid_generate_v4(), 'Kevin De Bruyne', 17, 'MIDFIELDER', 'Belgian', 32, (SELECT id FROM clubs WHERE name = 'Manchester City')),
-(uuid_generate_v4(), 'Ruben Dias', 3, 'DEFENSE', 'Portuguese', 27, (SELECT id FROM clubs WHERE name = 'Manchester City')),
-(uuid_generate_v4(), 'Ederson', 31, 'GOAL_KEEPER', 'Brazilian', 30, (SELECT id FROM clubs WHERE name = 'Manchester City')),
-(uuid_generate_v4(), 'Phil Foden', 47, 'MIDFIELDER', 'English', 23, (SELECT id FROM clubs WHERE name = 'Manchester City'));
-
--- Joueurs de Real Madrid
-INSERT INTO players (id, name, number, position, nationality, age, club_id)
-VALUES
-(uuid_generate_v4(), 'Vinicius Jr', 7, 'STRIKER', 'Brazilian', 24, (SELECT id FROM clubs WHERE name = 'Real Madrid')),
-(uuid_generate_v4(), 'Luka Modric', 10, 'MIDFIELDER', 'Croatian', 38, (SELECT id FROM clubs WHERE name = 'Real Madrid')),
-(uuid_generate_v4(), 'Antonio Rüdiger', 22, 'DEFENSE', 'German', 31, (SELECT id FROM clubs WHERE name = 'Real Madrid')),
-(uuid_generate_v4(), 'Thibaut Courtois', 1, 'GOAL_KEEPER', 'Belgian', 32, (SELECT id FROM clubs WHERE name = 'Real Madrid')),
-(uuid_generate_v4(), 'Jude Bellingham', 5, 'MIDFIELDER', 'English', 21, (SELECT id FROM clubs WHERE name = 'Real Madrid'));
-
--- Joueurs de Bayern Munich
-INSERT INTO players (id, name, number, position, nationality, age, club_id)
-VALUES
-(uuid_generate_v4(), 'Harry Kane', 9, 'STRIKER', 'English', 31, (SELECT id FROM clubs WHERE name = 'Bayern Munich')),
-(uuid_generate_v4(), 'Joshua Kimmich', 6, 'MIDFIELDER', 'German', 29, (SELECT id FROM clubs WHERE name = 'Bayern Munich')),
-(uuid_generate_v4(), 'Dayot Upamecano', 2, 'DEFENSE', 'French', 25, (SELECT id FROM clubs WHERE name = 'Bayern Munich')),
-(uuid_generate_v4(), 'Manuel Neuer', 1, 'GOAL_KEEPER', 'German', 37, (SELECT id FROM clubs WHERE name = 'Bayern Munich')),
-(uuid_generate_v4(), 'Jamal Musiala', 42, 'MIDFIELDER', 'German', 22, (SELECT id FROM clubs WHERE name = 'Bayern Munich'));
-
--- Joueurs de Juventus
-INSERT INTO players (id, name, number, position, nationality, age, club_id)
-VALUES
-(uuid_generate_v4(), 'Dusan Vlahovic', 9, 'STRIKER', 'Serbian', 24, (SELECT id FROM clubs WHERE name = 'Juventus')),
-(uuid_generate_v4(), 'Adrien Rabiot', 25, 'MIDFIELDER', 'French', 29, (SELECT id FROM clubs WHERE name = 'Juventus')),
-(uuid_generate_v4(), 'Gleison Bremer', 3, 'DEFENSE', 'Brazilian', 27, (SELECT id FROM clubs WHERE name = 'Juventus')),
-(uuid_generate_v4(), 'Wojciech Szczesny', 1, 'GOAL_KEEPER', 'Polish', 34, (SELECT id FROM clubs WHERE name = 'Juventus')),
-(uuid_generate_v4(), 'Federico Chiesa', 7, 'STRIKER', 'Italian', 26, (SELECT id FROM clubs WHERE name = 'Juventus'));
-
--- Joueurs de Paris Saint-Germain
-INSERT INTO players (id, name, number, position, nationality, age, club_id)
-VALUES
-(uuid_generate_v4(), 'Kylian Mbappé', 7, 'STRIKER', 'French', 26, (SELECT id FROM clubs WHERE name = 'Paris Saint-Germain')),
-(uuid_generate_v4(), 'Vitinha', 17, 'MIDFIELDER', 'Portuguese', 24, (SELECT id FROM clubs WHERE name = 'Paris Saint-Germain')),
-(uuid_generate_v4(), 'Marquinhos', 5, 'DEFENSE', 'Brazilian', 30, (SELECT id FROM clubs WHERE name = 'Paris Saint-Germain')),
-(uuid_generate_v4(), 'Gianluigi Donnarumma', 99, 'GOAL_KEEPER', 'Italian', 26, (SELECT id FROM clubs WHERE name = 'Paris Saint-Germain')),
-(uuid_generate_v4(), 'Achraf Hakimi', 2, 'DEFENSE', 'Moroccan', 25, (SELECT id FROM clubs WHERE name = 'Paris Saint-Germain'));
+-- Insertion de joueurs dans la table players avec le type ENUM 'player_position'
+INSERT INTO players (id, name, number, position, nationality, age, club_id) VALUES
+(UUID_GENERATE_V4(), 'Kevin De Bruyne', 17, 'MIDFIELDER', 'Belgian', 32, (SELECT id FROM clubs WHERE name = 'Manchester City')),
+(UUID_GENERATE_V4(), 'Karim Benzema', 9, 'STRIKER', 'French', 35, (SELECT id FROM clubs WHERE name = 'Real Madrid')),
+(UUID_GENERATE_V4(), 'Robert Lewandowski', 9, 'STRIKER', 'Polish', 34, (SELECT id FROM clubs WHERE name = 'Bayern Munich')),
+(UUID_GENERATE_V4(), 'Cristiano Ronaldo', 7, 'STRIKER', 'Portuguese', 38, (SELECT id FROM clubs WHERE name = 'Juventus')),
+(UUID_GENERATE_V4(), 'Lionel Messi', 30, 'STRIKER', 'Argentine', 36, (SELECT id FROM clubs WHERE name = 'Paris Saint-Germain')),
+(UUID_GENERATE_V4(), 'Sergio Busquets', 5, 'MIDFIELDER', 'Spanish', 35, (SELECT id FROM clubs WHERE name = 'Barcelona')),
+(UUID_GENERATE_V4(), 'Mohamed Salah', 11, 'STRIKER', 'Egyptian', 31, (SELECT id FROM clubs WHERE name = 'Liverpool')),
+(UUID_GENERATE_V4(), 'Bukayo Saka', 7, 'MIDFIELDER', 'English', 22, (SELECT id FROM clubs WHERE name = 'Arsenal')),
+(UUID_GENERATE_V4(), 'Raheem Sterling', 7, 'MIDFIELDER', 'English', 28, (SELECT id FROM clubs WHERE name = 'Chelsea')),
+(UUID_GENERATE_V4(), 'Bruno Fernandes', 18, 'MIDFIELDER', 'Portuguese', 29, (SELECT id FROM clubs WHERE name = 'Manchester United'));

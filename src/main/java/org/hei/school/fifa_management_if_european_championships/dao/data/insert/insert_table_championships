@@ -1,6 +1,0 @@
-INSERT INTO championships (id, name, country) VALUES
-  (uuid_generate_v4(), 'Premier League', 'England'),
-  (uuid_generate_v4(), 'La Liga', 'Spain'),
-  (uuid_generate_v4(), 'Bundesliga', 'Germany'),
-  (uuid_generate_v4(), 'Seria A', 'Italy'),
-  (uuid_generate_v4(), 'Ligue 1', 'France');

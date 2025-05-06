@@ -1,6 +1,5 @@
 CREATE TABLE coaches (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     name VARCHAR(100) NOT NULL,
-    nationality VARCHAR(100) NOT NULL,
-    club_id UUID UNIQUE NOT NULL REFERENCES clubs(id) ON DELETE CASCADE
+    nationality VARCHAR(100) NOT NULL
 );

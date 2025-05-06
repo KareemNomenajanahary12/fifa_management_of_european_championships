@@ -8,3 +8,9 @@ CREATE TABLE players (
     club_id UUID NOT NULL REFERENCES clubs(id) ON DELETE CASCADE,
     UNIQUE (club_id, number)
 );
+
+ALTER TABLE players ALTER COLUMN club_id DROP NOT NULL;
+ALTER TABLE players DROP CONSTRAINT IF EXISTS players_club_id_number_key;
+CREATE UNIQUE INDEX IF NOT EXISTS players_club_id_number_unique
+    ON players (club_id, number)
+    WHERE club_id IS NOT NULL;
