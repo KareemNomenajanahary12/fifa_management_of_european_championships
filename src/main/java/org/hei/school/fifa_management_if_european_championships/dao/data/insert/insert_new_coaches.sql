@@ -17,3 +17,11 @@ VALUES (uuid_generate_v4(), 'Rubén Baraja', 'Spanish', 'a53cd87f-d5c0-42ef-b978
 -- Athletic Bilbao
 INSERT INTO coaches (id, name, nationality, club_id)
 VALUES (uuid_generate_v4(), 'Ernesto Valverde', 'Spanish', '436f2971-16ba-4d46-8b4f-60c8422e7aa9');
+
+
+BEGIN;
+
+UPDATE coaches SET name = 'Francisco Garcia Pimienta' WHERE id = '5d1addc4-1860-44ac-b21b-a8e0555e2179';
+UPDATE coaches SET name = 'Ruben Baraja' WHERE id = '39b13698-ae60-498d-a825-84e04bac9541';
+
+COMMIT;
